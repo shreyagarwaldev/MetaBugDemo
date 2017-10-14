@@ -16,7 +16,8 @@ ngOnDestroy() {
 
 ngAfterViewInit() {
     const elem = this.renderer.createElement(this.document.head, 'meta');
-    this.renderer.setElementProperty(elem, 'name', 'foo');
+    this.renderer.setElementProperty(elem, 'name', 'twitter:title');
+    this.renderer.setElementProperty(elem, 'content', 'ABOUT PAGE');
 }
 
 GoToHome()
