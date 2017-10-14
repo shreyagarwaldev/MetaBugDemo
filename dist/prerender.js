@@ -102556,7 +102556,7 @@ platform_server_1.renderModuleFactory(AppServerModuleNgFactory, {
         module_map_ngfactory_loader_1.provideModuleMap(LAZY_MODULE_MAP)
     ]
 })
-    .then(function (html) { return fs_1.writeFileSync(path_1.join('browser', 'index.html'), html.replace(new RegExp('<meta _ngcontent-c0="" name="twitter:title" content="(?:.*)">', 'g'), '')); });
+    .then(function (html) { return fs_1.writeFileSync(path_1.join('browser', 'index.html'), html.replace(new RegExp('<meta _ngcontent-c0="" name="twitter:title" content="HOME PAGE">', 'g'), '')); });
 
 
 /***/ })

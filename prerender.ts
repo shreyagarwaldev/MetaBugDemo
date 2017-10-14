@@ -27,4 +27,4 @@ renderModuleFactory(AppServerModuleNgFactory, {
     provideModuleMap(LAZY_MODULE_MAP)
   ]
 })
-.then(html => writeFileSync(join('browser', 'index.html'), html.replace(new RegExp('<meta _ngcontent-c0="" name="(?:.*)" content="(?:.*)">', 'g'), '')));
+.then(html => writeFileSync(join('browser', 'index.html'), html.replace(new RegExp('<meta _ngcontent-c0="" name="twitter:title" content="HOME PAGE">', 'g'), '')));
