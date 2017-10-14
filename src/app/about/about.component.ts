@@ -1,6 +1,6 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit, Renderer, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Title, Meta } from '@angular/platform-browser'
+import { DOCUMENT } from '@angular/platform-browser'
 
 @Component({
     templateUrl: './about.component.html',
@@ -8,17 +8,15 @@ import { Title, Meta } from '@angular/platform-browser'
 })
 
 export class AboutComponent {
-    constructor(title: Title,
-        public meta: Meta, public router:Router) {
-meta.addTags([
-{ name: 'twitter:title', content: 'This is about page' },
-{ property: 'og:title', content: 'This is about page' },
-]);
+    constructor(@Inject(DOCUMENT) public document: any, public renderer: Renderer, public router:Router) {
 }
 
 ngOnDestroy() {
-this.meta.removeTag('property="og:title"');
-this.meta.removeTag('name="twitter:title"');
+}
+
+ngAfterViewInit() {
+    const elem = this.renderer.createElement(this.document.head, 'meta');
+    this.renderer.setElementProperty(elem, 'name', 'foo');
 }
 
 GoToHome()
